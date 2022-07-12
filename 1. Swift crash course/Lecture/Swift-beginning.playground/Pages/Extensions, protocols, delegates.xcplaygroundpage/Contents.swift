@@ -68,7 +68,7 @@ class Controller {
     // View property
 }
 
-protocol ViewWithButtonDelegate: class {
+protocol ViewWithButtonDelegate: AnyObject {
     // Did tap on button
 }
 
