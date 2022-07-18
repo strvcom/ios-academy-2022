@@ -11,7 +11,7 @@ Follow this section to get the project running on your MacBook.
 - [Xcode 13.4+](https://apps.apple.com/us/app/xcode/id497799835)
 - [CocoaPods](https://cocoapods.org)
 
-### Installation
+### Installation Rick&Morty application
 
 Before opening the workspace, make sure you install CocoaPods dependencies. You can do so by executing
 
@@ -19,4 +19,4 @@ Before opening the workspace, make sure you install CocoaPods dependencies. You 
 pod install
 ```
 
-in the project folder from Terminal.
+in the Rick&Morty folder from Terminal.
