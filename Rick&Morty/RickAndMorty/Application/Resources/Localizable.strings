@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  RickAndMorty
+
+  Created by Jan Kaltoun on 30/11/2018.
+  Copyright © 2018 STRV. All rights reserved.
+*/
+
+"general.state.loading" = "Loading...";
+"general.state.error.something.went.wrong" = "😢 Something went wrong";
+
+"tab.title.characters" = "Characters";
+"tab.title.episodes" = "Episodes";
+"tab.title.locations" = "Locations";
+
+"episode.detail.appearing.characters" = "Appearing characters";
+"episode.detail.info" = "Info";
+
+"character.detail.episodes" = "Episodes";
+"character.detail.info" = "Info";
+
+"location.detail.residents" = "Residents";
+"location.detail.info" = "Info";

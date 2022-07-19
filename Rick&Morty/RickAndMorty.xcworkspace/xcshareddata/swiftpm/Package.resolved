@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ios-dependency-injection",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/strvcom/ios-dependency-injection.git",
+      "state" : {
+        "revision" : "b83c0ee762957f3e1871e9268b9013c75b866c01",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
