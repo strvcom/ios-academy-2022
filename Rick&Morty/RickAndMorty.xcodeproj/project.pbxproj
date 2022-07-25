@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BD8CAB9288F3AFF00D24425 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0BD8CAB8288F3AFF00D24425 /* SDWebImageSwiftUI */; };
 		23DFBD972885C41600CE940B /* DummyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFBD962885C41600CE940B /* DummyCoordinator.swift */; };
 		23DFBD992885C48400CE940B /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DFBD982885C48400CE940B /* DummyView.swift */; };
 		27FAC4342479D452002F2A33 /* ActiveScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAC3ED2479D452002F2A33 /* ActiveScene.swift */; };
@@ -158,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BD8CAB9288F3AFF00D24425 /* SDWebImageSwiftUI in Frameworks */,
 				756043300B384236749A0F8A /* Pods_defaults_RickAndMorty.framework in Frameworks */,
 				AD28704D2809A0DA0080AD7F /* DependencyInjection in Frameworks */,
 			);
@@ -553,6 +555,7 @@
 			name = RickAndMorty;
 			packageProductDependencies = (
 				AD28704C2809A0DA0080AD7F /* DependencyInjection */,
+				0BD8CAB8288F3AFF00D24425 /* SDWebImageSwiftUI */,
 			);
 			productName = STRVWeatherMVVM;
 			productReference = 2F2D361821B02C65001C1CC7 /* RickAndMorty (DEV).app */;
@@ -585,6 +588,7 @@
 			mainGroup = 2F2D360F21B02C65001C1CC7;
 			packageReferences = (
 				AD28704B2809A0DA0080AD7F /* XCRemoteSwiftPackageReference "ios-dependency-injection" */,
+				0BD8CAB7288F3AFF00D24425 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 2F2D361921B02C65001C1CC7 /* Products */;
 			projectDirPath = "";
@@ -1291,6 +1295,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0BD8CAB7288F3AFF00D24425 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		AD28704B2809A0DA0080AD7F /* XCRemoteSwiftPackageReference "ios-dependency-injection" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/strvcom/ios-dependency-injection.git";
@@ -1302,6 +1314,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0BD8CAB8288F3AFF00D24425 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BD8CAB7288F3AFF00D24425 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		AD28704C2809A0DA0080AD7F /* DependencyInjection */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AD28704B2809A0DA0080AD7F /* XCRemoteSwiftPackageReference "ios-dependency-injection" */;
