@@ -23,24 +23,11 @@ final class TabBarCoordinator {
 // MARK: - Coordinator lifecycle
 extension TabBarCoordinator: TabBarControllerCoordinator {
     func start() {
-        /*let coordinators = [
-            makeDummyScene()
-        ]
-
-        for coordinator in coordinators {
-            childCoordinators.append(coordinator)
-
-            coordinator.start()
-        }
-
-        tabBarController.setViewControllers(coordinators.map(\.rootViewController), animated: false)*/
-
         let viewControllers = [
             makeLocationsScene(),
             makeLocationDetailScene()
         ]
-        tabBarController.setViewControllers(viewControllers.compactMap { $0 },
-                                            animated: false)
+        tabBarController.setViewControllers(viewControllers.compactMap { $0 }, animated: false)
     }
 }
 
