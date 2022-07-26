@@ -90,15 +90,33 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `LocationDetailStoryboard`.
+    static let locationDetailStoryboard = _R.storyboard.locationDetailStoryboard()
+    /// Storyboard `LocationsStoryboard`.
+    static let locationsStoryboard = _R.storyboard.locationsStoryboard()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LocationDetailStoryboard", bundle: ...)`
+    static func locationDetailStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.locationDetailStoryboard)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LocationsStoryboard", bundle: ...)`
+    static func locationsStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.locationsStoryboard)
     }
     #endif
 
@@ -736,6 +754,12 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try locationDetailStoryboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try locationsStoryboard.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -744,6 +768,38 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct locationDetailStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LocationDetailViewController
+
+      let bundle = R.hostingBundle
+      let name = "LocationDetailStoryboard"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct locationsStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LocationsViewController
+
+      let bundle = R.hostingBundle
+      let name = "LocationsStoryboard"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

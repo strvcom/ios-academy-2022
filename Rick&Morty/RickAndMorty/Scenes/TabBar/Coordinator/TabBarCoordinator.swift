@@ -23,7 +23,7 @@ final class TabBarCoordinator {
 // MARK: - Coordinator lifecycle
 extension TabBarCoordinator: TabBarControllerCoordinator {
     func start() {
-        let coordinators = [
+        /*let coordinators = [
             makeDummyScene()
         ]
 
@@ -33,18 +33,38 @@ extension TabBarCoordinator: TabBarControllerCoordinator {
             coordinator.start()
         }
 
-        tabBarController.setViewControllers(coordinators.map(\.rootViewController), animated: false)
+        tabBarController.setViewControllers(coordinators.map(\.rootViewController), animated: false)*/
+
+        let viewControllers = [
+            makeLocationsScene(),
+            makeLocationDetailScene()
+        ]
+        tabBarController.setViewControllers(viewControllers.compactMap { $0 },
+                                            animated: false)
     }
 }
 
 // MARK: - Factories
 extension TabBarCoordinator {
-    func makeDummyScene() -> ViewControllerCoordinator {
-        let coordinator = DummyCoordinator(container: container)
+    func makeLocationsScene() -> UIViewController? {
+        guard let viewController = R.storyboard.locationsStoryboard().instantiateInitialViewController()
+        else {
+            return nil
+        }
 
-        coordinator.rootViewController.tabBarItem.title = "Hello"
-        coordinator.rootViewController.tabBarItem.image = .systemInfoCircle
+        viewController.tabBarItem.title = "Locations"
+        viewController.tabBarItem.image = .systemGlobe
+        return viewController
+    }
 
-        return coordinator
+    func makeLocationDetailScene() -> UIViewController? {
+        guard let viewController = R.storyboard.locationDetailStoryboard().instantiateInitialViewController()
+        else {
+            return nil
+        }
+
+        viewController.tabBarItem.title = "Location detail"
+        viewController.tabBarItem.image = .systemGlobe
+        return viewController
     }
 }
