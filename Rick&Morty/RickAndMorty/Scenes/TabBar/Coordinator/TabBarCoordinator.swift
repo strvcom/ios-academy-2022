@@ -39,7 +39,7 @@ extension TabBarCoordinator {
             return nil
         }
 
-        viewController.tabBarItem.title = "Locations"
+        viewController.tabBarItem.title = R.string.localizable.tabTitleLocations()
         viewController.tabBarItem.image = .systemGlobe
         return viewController
     }
@@ -50,7 +50,7 @@ extension TabBarCoordinator {
             return nil
         }
 
-        viewController.tabBarItem.title = "Location detail"
+        viewController.tabBarItem.title = R.string.localizable.locationDetailInfo()
         viewController.tabBarItem.image = .systemGlobe
         return viewController
     }
