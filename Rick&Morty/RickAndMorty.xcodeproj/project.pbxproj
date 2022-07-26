@@ -63,6 +63,7 @@
 		FF496887288FCD4D00D53859 /* LocationsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF496886288FCD4D00D53859 /* LocationsStoryboard.storyboard */; };
 		FF49688A288FD06500D53859 /* LocationDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF496889288FD06500D53859 /* LocationDetailStoryboard.storyboard */; };
 		FF49688C288FD06F00D53859 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49688B288FD06F00D53859 /* LocationDetailViewController.swift */; };
+		FF49688F288FD74500D53859 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF49688E288FD74500D53859 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF49688F288FD74500D53859 /* SDWebImageSwiftUI in Frameworks */,
 				756043300B384236749A0F8A /* Pods_defaults_RickAndMorty.framework in Frameworks */,
 				AD28704D2809A0DA0080AD7F /* DependencyInjection in Frameworks */,
 			);
@@ -567,6 +569,7 @@
 			name = RickAndMorty;
 			packageProductDependencies = (
 				AD28704C2809A0DA0080AD7F /* DependencyInjection */,
+				FF49688E288FD74500D53859 /* SDWebImageSwiftUI */,
 			);
 			productName = STRVWeatherMVVM;
 			productReference = 2F2D361821B02C65001C1CC7 /* RickAndMorty (DEV).app */;
@@ -599,6 +602,7 @@
 			mainGroup = 2F2D360F21B02C65001C1CC7;
 			packageReferences = (
 				AD28704B2809A0DA0080AD7F /* XCRemoteSwiftPackageReference "ios-dependency-injection" */,
+				FF49688D288FD74500D53859 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 2F2D361921B02C65001C1CC7 /* Products */;
 			projectDirPath = "";
@@ -1315,6 +1319,14 @@
 				minimumVersion = 1.0.2;
 			};
 		};
+		FF49688D288FD74500D53859 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1322,6 +1334,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD28704B2809A0DA0080AD7F /* XCRemoteSwiftPackageReference "ios-dependency-injection" */;
 			productName = DependencyInjection;
+		};
+		FF49688E288FD74500D53859 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF49688D288FD74500D53859 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
