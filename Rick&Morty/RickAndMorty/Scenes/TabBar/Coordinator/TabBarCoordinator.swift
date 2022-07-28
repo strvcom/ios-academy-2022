@@ -34,7 +34,7 @@ extension TabBarCoordinator: TabBarControllerCoordinator {
 // MARK: - Factories
 extension TabBarCoordinator {
     func makeLocationsScene() -> UIViewController? {
-        guard let viewController = R.storyboard.locationsStoryboard().instantiateInitialViewController()
+        guard let viewController = R.storyboard.locationsListViewController().instantiateInitialViewController()
         else {
             return nil
         }

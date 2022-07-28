@@ -96,8 +96,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `LocationDetailStoryboard`.
     static let locationDetailStoryboard = _R.storyboard.locationDetailStoryboard()
-    /// Storyboard `LocationsStoryboard`.
-    static let locationsStoryboard = _R.storyboard.locationsStoryboard()
+    /// Storyboard `LocationsListViewController`.
+    static let locationsListViewController = _R.storyboard.locationsListViewController()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -114,9 +114,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "LocationsStoryboard", bundle: ...)`
-    static func locationsStoryboard(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.locationsStoryboard)
+    /// `UIStoryboard(name: "LocationsListViewController", bundle: ...)`
+    static func locationsListViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.locationsListViewController)
     }
     #endif
 
@@ -552,6 +552,26 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `LocationsListItemCell`.
+    static let locationsListItemCell = _R.nib._LocationsListItemCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LocationsListItemCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.locationsListItemCell) instead")
+    static func locationsListItemCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.locationsListItemCell)
+    }
+    #endif
+
+    static func locationsListItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LocationsListItemCell? {
+      return R.nib.locationsListItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LocationsListItemCell
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
@@ -749,6 +769,23 @@ struct _R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _LocationsListItemCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LocationsListItemCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LocationsListItemCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LocationsListItemCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
@@ -758,7 +795,7 @@ struct _R: Rswift.Validatable {
       try locationDetailStoryboard.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try locationsStoryboard.validate()
+      try locationsListViewController.validate()
       #endif
     }
 
@@ -795,11 +832,11 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct locationsStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = LocationsViewController
+    struct locationsListViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LocationsListViewController
 
       let bundle = R.hostingBundle
-      let name = "LocationsStoryboard"
+      let name = "LocationsListViewController"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
