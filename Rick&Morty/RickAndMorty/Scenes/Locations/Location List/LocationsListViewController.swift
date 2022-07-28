@@ -44,8 +44,6 @@ private extension LocationsListViewController {
     }
 
     func setupView() {
-        navigationItem.title = R.string.localizable.tabTitleLocations()
-
         view.insertSubview(backgroundView, at: 0)
         view.addConstraints([
             view.topAnchor.constraint(equalTo: backgroundView.topAnchor),
