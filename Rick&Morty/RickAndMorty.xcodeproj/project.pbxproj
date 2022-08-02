@@ -61,11 +61,17 @@
 		C10117B624DD751800EBAE2B /* ViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10117B424DD751800EBAE2B /* ViewControllerCoordinator.swift */; };
 		FF496885288FCCBA00D53859 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF496884288FCCBA00D53859 /* LocationsListViewController.swift */; };
 		FF496887288FCD4D00D53859 /* LocationsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF496886288FCD4D00D53859 /* LocationsListViewController.storyboard */; };
-		FF49688A288FD06500D53859 /* LocationDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF496889288FD06500D53859 /* LocationDetailStoryboard.storyboard */; };
-		FF49688C288FD06F00D53859 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49688B288FD06F00D53859 /* LocationDetailViewController.swift */; };
 		FF49688F288FD74500D53859 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF49688E288FD74500D53859 /* SDWebImageSwiftUI */; };
 		FF6A302F289289D400E569D0 /* LocationsListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A302D289289D400E569D0 /* LocationsListItemCell.swift */; };
 		FF6A3030289289D400E569D0 /* LocationsListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6A302E289289D400E569D0 /* LocationsListItemCell.xib */; };
+		FFD1EEAD28995BAE0096A79C /* LocationDetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1EEA328995BAE0096A79C /* LocationDetailInfoCell.swift */; };
+		FFD1EEAE28995BAE0096A79C /* LocationDetailResidentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD1EEA428995BAE0096A79C /* LocationDetailResidentCell.xib */; };
+		FFD1EEAF28995BAE0096A79C /* LocationDetailResidentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1EEA528995BAE0096A79C /* LocationDetailResidentCell.swift */; };
+		FFD1EEB028995BAE0096A79C /* LocationDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD1EEA628995BAE0096A79C /* LocationDetailHeaderView.xib */; };
+		FFD1EEB128995BAE0096A79C /* LocationDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1EEA728995BAE0096A79C /* LocationDetailHeaderView.swift */; };
+		FFD1EEB228995BAE0096A79C /* LocationDetailInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD1EEA828995BAE0096A79C /* LocationDetailInfoCell.xib */; };
+		FFD1EEB428995BAE0096A79C /* LocationDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD1EEAA28995BAE0096A79C /* LocationDetailViewController.storyboard */; };
+		FFD1EEB6289961290096A79C /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1EEB5289961290096A79C /* LocationDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,10 +162,16 @@
 		EF0271AE2491299A008CE976 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		FF496884288FCCBA00D53859 /* LocationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListViewController.swift; sourceTree = "<group>"; };
 		FF496886288FCD4D00D53859 /* LocationsListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationsListViewController.storyboard; sourceTree = "<group>"; };
-		FF496889288FD06500D53859 /* LocationDetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationDetailStoryboard.storyboard; sourceTree = "<group>"; };
-		FF49688B288FD06F00D53859 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		FF6A302D289289D400E569D0 /* LocationsListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsListItemCell.swift; sourceTree = "<group>"; };
 		FF6A302E289289D400E569D0 /* LocationsListItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationsListItemCell.xib; sourceTree = "<group>"; };
+		FFD1EEA328995BAE0096A79C /* LocationDetailInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailInfoCell.swift; sourceTree = "<group>"; };
+		FFD1EEA428995BAE0096A79C /* LocationDetailResidentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationDetailResidentCell.xib; sourceTree = "<group>"; };
+		FFD1EEA528995BAE0096A79C /* LocationDetailResidentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailResidentCell.swift; sourceTree = "<group>"; };
+		FFD1EEA628995BAE0096A79C /* LocationDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationDetailHeaderView.xib; sourceTree = "<group>"; };
+		FFD1EEA728995BAE0096A79C /* LocationDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailHeaderView.swift; sourceTree = "<group>"; };
+		FFD1EEA828995BAE0096A79C /* LocationDetailInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationDetailInfoCell.xib; sourceTree = "<group>"; };
+		FFD1EEAA28995BAE0096A79C /* LocationDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LocationDetailViewController.storyboard; sourceTree = "<group>"; };
+		FFD1EEB5289961290096A79C /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -544,8 +556,9 @@
 		FF496888288FD05C00D53859 /* Location Detail */ = {
 			isa = PBXGroup;
 			children = (
-				FF49688B288FD06F00D53859 /* LocationDetailViewController.swift */,
-				FF496889288FD06500D53859 /* LocationDetailStoryboard.storyboard */,
+				FFD1EEAA28995BAE0096A79C /* LocationDetailViewController.storyboard */,
+				FFD1EEB5289961290096A79C /* LocationDetailViewController.swift */,
+				FFD1EEA228995BAE0096A79C /* Views */,
 			);
 			path = "Location Detail";
 			sourceTree = "<group>";
@@ -565,6 +578,19 @@
 			children = (
 				FF6A302D289289D400E569D0 /* LocationsListItemCell.swift */,
 				FF6A302E289289D400E569D0 /* LocationsListItemCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FFD1EEA228995BAE0096A79C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFD1EEA328995BAE0096A79C /* LocationDetailInfoCell.swift */,
+				FFD1EEA428995BAE0096A79C /* LocationDetailResidentCell.xib */,
+				FFD1EEA528995BAE0096A79C /* LocationDetailResidentCell.swift */,
+				FFD1EEA628995BAE0096A79C /* LocationDetailHeaderView.xib */,
+				FFD1EEA728995BAE0096A79C /* LocationDetailHeaderView.swift */,
+				FFD1EEA828995BAE0096A79C /* LocationDetailInfoCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -641,11 +667,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27FAC44B2479D452002F2A33 /* Localizable.strings in Resources */,
+				FFD1EEAE28995BAE0096A79C /* LocationDetailResidentCell.xib in Resources */,
 				FF6A3030289289D400E569D0 /* LocationsListItemCell.xib in Resources */,
 				ADED7583282E93BC00A30215 /* ClashDisplay.ttf in Resources */,
-				FF49688A288FD06500D53859 /* LocationDetailStoryboard.storyboard in Resources */,
+				FFD1EEB228995BAE0096A79C /* LocationDetailInfoCell.xib in Resources */,
+				FFD1EEB028995BAE0096A79C /* LocationDetailHeaderView.xib in Resources */,
 				FF496887288FCD4D00D53859 /* LocationsListViewController.storyboard in Resources */,
 				ADED7584282E93BF00A30215 /* Satoshi.ttf in Resources */,
+				FFD1EEB428995BAE0096A79C /* LocationDetailViewController.storyboard in Resources */,
 				ADFF70CD282D613F0050FF20 /* Assets.xcassets in Resources */,
 				27FAC4352479D452002F2A33 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -742,6 +771,7 @@
 				ADFF70C2282D5FD10050FF20 /* Location.swift in Sources */,
 				ADFF70B2282D5E7D0050FF20 /* UISceneDelegate+AppCoordinator.swift in Sources */,
 				ADFF70CB282D60330050FF20 /* URL+Convenience.swift in Sources */,
+				FFD1EEB6289961290096A79C /* LocationDetailViewController.swift in Sources */,
 				27FAC4442479D452002F2A33 /* InitialSceneCoordinator.swift in Sources */,
 				ADFF711A282D66A10050FF20 /* ProvidedData.swift in Sources */,
 				ADFF70C1282D5FD10050FF20 /* Episode.swift in Sources */,
@@ -762,12 +792,12 @@
 				ADFF70C9282D5FDE0050FF20 /* PaginatedResponse.swift in Sources */,
 				ADFF70C8282D5FDE0050FF20 /* PaginationInfo.swift in Sources */,
 				AD5D11DA2836A5FA004F7774 /* RMNavigationController.swift in Sources */,
-				FF49688C288FD06F00D53859 /* LocationDetailViewController.swift in Sources */,
 				ADFF710F282D648E0050FF20 /* BackgroundGradientView.swift in Sources */,
 				AD5D11D528368DAB004F7774 /* Image+App.swift in Sources */,
 				27FAC43F2479D452002F2A33 /* AppCoordinating.swift in Sources */,
 				AD5D11B228354122004F7774 /* UILabel+DynamicFont.swift in Sources */,
 				27FAC45F2479D452002F2A33 /* ManagerRegistration.swift in Sources */,
+				FFD1EEB128995BAE0096A79C /* LocationDetailHeaderView.swift in Sources */,
 				ADFF7117282D64E60050FF20 /* OnFirstAppearViewModifier.swift in Sources */,
 				ADFF70D3282D622B0050FF20 /* Color+App.swift in Sources */,
 				AD5D11AF28354122004F7774 /* UITableView+RegistrationHelpers.swift in Sources */,
@@ -778,9 +808,11 @@
 				ADFF70C3282D5FD10050FF20 /* Character.swift in Sources */,
 				ADFF70A3282D58CF0050FF20 /* Logger.swift in Sources */,
 				ADFF70C4282D5FD10050FF20 /* CharacterLocation.swift in Sources */,
+				FFD1EEAD28995BAE0096A79C /* LocationDetailInfoCell.swift in Sources */,
 				ADFF70AE282D5A1F0050FF20 /* TabBarCoordinator.swift in Sources */,
 				AD5D11B8283541C1004F7774 /* NibLoadableView.swift in Sources */,
 				ADFF7111282D648E0050FF20 /* WebRenderingView.swift in Sources */,
+				FFD1EEAF28995BAE0096A79C /* LocationDetailResidentCell.swift in Sources */,
 				AD5D11D72836A45F004F7774 /* Rswift+Font.swift in Sources */,
 				27FAC4402479D452002F2A33 /* AppCoordinatorContaining.swift in Sources */,
 				ADFF70C0282D5FD10050FF20 /* CharacterOrigin.swift in Sources */,
