@@ -38,7 +38,8 @@ class LocationDetailViewController: UIViewController {
         return view
     }()
 
-    private let location = Location.mock
+    var location: Location!
+
     private let residents: [Character] = {
         // Initialize with 100 Character mocks.
         (0...99).map { _ in
@@ -76,6 +77,7 @@ private extension LocationDetailViewController {
         tableView.register(LocationDetailResidentCell.self)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableHeaderView = UIView()
     }
 
     func configure(for location: Location) {

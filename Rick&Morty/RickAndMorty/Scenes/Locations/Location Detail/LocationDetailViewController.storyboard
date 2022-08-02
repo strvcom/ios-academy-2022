@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WtX-lU-fRt">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="S8J-Ez-0qo">
@@ -31,7 +31,7 @@
                             <constraint firstItem="WtX-lU-fRt" firstAttribute="trailing" secondItem="LQp-C8-rfU" secondAttribute="trailing" id="Tie-in-dOE"/>
                             <constraint firstItem="WtX-lU-fRt" firstAttribute="leading" secondItem="LQp-C8-rfU" secondAttribute="leading" id="U9G-3X-WBR"/>
                             <constraint firstAttribute="bottom" secondItem="WtX-lU-fRt" secondAttribute="bottom" id="Uow-hB-JMR"/>
-                            <constraint firstItem="WtX-lU-fRt" firstAttribute="top" secondItem="0xJ-NO-exd" secondAttribute="top" id="lcZ-jb-hk0"/>
+                            <constraint firstItem="WtX-lU-fRt" firstAttribute="top" secondItem="LQp-C8-rfU" secondAttribute="top" id="lcZ-jb-hk0"/>
                             <constraint firstItem="S8J-Ez-0qo" firstAttribute="centerX" secondItem="0xJ-NO-exd" secondAttribute="centerX" id="p9M-5U-BJa"/>
                         </constraints>
                     </view>
