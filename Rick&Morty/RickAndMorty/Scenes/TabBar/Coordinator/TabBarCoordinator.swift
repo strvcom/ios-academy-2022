@@ -45,7 +45,7 @@ extension TabBarCoordinator {
     }
 
     func makeLocationDetailScene() -> UIViewController? {
-        guard let viewController = R.storyboard.locationDetailStoryboard().instantiateInitialViewController()
+        guard let viewController = R.storyboard.locationDetailViewController().instantiateInitialViewController()
         else {
             return nil
         }

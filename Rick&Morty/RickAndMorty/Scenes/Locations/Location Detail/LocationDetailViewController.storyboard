@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iBv-RY-Mu4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location Detail View Controller-->
+        <scene sceneID="4fK-Tq-hCu">
+            <objects>
+                <viewController id="iBv-RY-Mu4" customClass="LocationDetailViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0xJ-NO-exd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WtX-lU-fRt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="S8J-Ez-0qo">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LQp-C8-rfU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="S8J-Ez-0qo" firstAttribute="centerY" secondItem="0xJ-NO-exd" secondAttribute="centerY" id="Bk8-3S-4e6"/>
+                            <constraint firstItem="WtX-lU-fRt" firstAttribute="trailing" secondItem="LQp-C8-rfU" secondAttribute="trailing" id="Tie-in-dOE"/>
+                            <constraint firstItem="WtX-lU-fRt" firstAttribute="leading" secondItem="LQp-C8-rfU" secondAttribute="leading" id="U9G-3X-WBR"/>
+                            <constraint firstAttribute="bottom" secondItem="WtX-lU-fRt" secondAttribute="bottom" id="Uow-hB-JMR"/>
+                            <constraint firstItem="WtX-lU-fRt" firstAttribute="top" secondItem="0xJ-NO-exd" secondAttribute="top" id="lcZ-jb-hk0"/>
+                            <constraint firstItem="S8J-Ez-0qo" firstAttribute="centerX" secondItem="0xJ-NO-exd" secondAttribute="centerX" id="p9M-5U-BJa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="S8J-Ez-0qo" id="ENR-NA-BI3"/>
+                        <outlet property="tableView" destination="WtX-lU-fRt" id="VPD-QE-Wn2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rpc-Rg-n4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
