@@ -6,7 +6,6 @@
 //  Copyright © 2022 STRV. All rights reserved.
 //
 
-import Combine
 import UIKit
 
 class LocationDetailViewController: UIViewController {
@@ -39,7 +38,6 @@ class LocationDetailViewController: UIViewController {
         return view
     }()
 
-    private var cancellables = Set<AnyCancellable>()
     private let location = Location.mock
     private let residents: [Character] = {
         // Initialize with 100 Character mocks.
@@ -83,9 +81,7 @@ private extension LocationDetailViewController {
     func configure(for location: Location) {
         navigationItem.title = location.name
 
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        self.tableView.reloadData()
     }
 }
 
