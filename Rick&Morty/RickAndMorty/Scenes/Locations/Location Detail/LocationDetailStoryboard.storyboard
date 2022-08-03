@@ -15,9 +15,36 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STp-Er-1xG" customClass="LocationDetailHeaderView" customModule="RickAndMorty" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="414" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="baP-pE-8xw">
+                                <rect key="frame" x="0.0" y="178" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="718" id="dth-3W-fxT"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="baP-pE-8xw" firstAttribute="top" secondItem="STp-Er-1xG" secondAttribute="bottom" constant="8" symbolic="YES" id="5NW-oc-vuY"/>
+                            <constraint firstItem="baP-pE-8xw" firstAttribute="top" secondItem="STp-Er-1xG" secondAttribute="bottom" constant="8" symbolic="YES" id="Ash-pH-a26"/>
+                            <constraint firstAttribute="trailing" secondItem="baP-pE-8xw" secondAttribute="trailing" id="BD6-Ik-u8s"/>
+                            <constraint firstItem="STp-Er-1xG" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Ugp-05-YPb"/>
+                            <constraint firstAttribute="trailing" secondItem="STp-Er-1xG" secondAttribute="trailing" id="aoJ-6T-j8z"/>
+                            <constraint firstItem="STp-Er-1xG" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="20" symbolic="YES" id="mel-Go-0HH"/>
+                            <constraint firstAttribute="bottom" secondItem="baP-pE-8xw" secondAttribute="bottom" id="qhN-d8-2Ft"/>
+                            <constraint firstItem="baP-pE-8xw" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="uyg-vh-kmU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="headerView" destination="STp-Er-1xG" id="fHd-FD-vJS"/>
+                        <outlet property="tableView" destination="baP-pE-8xw" id="PRT-E3-vta"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

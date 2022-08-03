@@ -552,10 +552,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
+    /// Nib `LocationDetailHeaderView`.
+    static let locationDetailHeaderView = _R.nib._LocationDetailHeaderView()
     /// Nib `LocationsListItemCell`.
     static let locationsListItemCell = _R.nib._LocationsListItemCell()
+    /// Nib `ResidentListItemCellTableViewCell`.
+    static let residentListItemCellTableViewCell = _R.nib._ResidentListItemCellTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LocationDetailHeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.locationDetailHeaderView) instead")
+    static func locationDetailHeaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.locationDetailHeaderView)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "LocationsListItemCell", in: bundle)`
@@ -565,8 +577,24 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ResidentListItemCellTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.residentListItemCellTableViewCell) instead")
+    static func residentListItemCellTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.residentListItemCellTableViewCell)
+    }
+    #endif
+
+    static func locationDetailHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LocationDetailHeaderView? {
+      return R.nib.locationDetailHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LocationDetailHeaderView
+    }
+
     static func locationsListItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LocationsListItemCell? {
       return R.nib.locationsListItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LocationsListItemCell
+    }
+
+    static func residentListItemCellTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ResidentListItemCellTableViewCell? {
+      return R.nib.residentListItemCellTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ResidentListItemCellTableViewCell
     }
 
     fileprivate init() {}
@@ -764,18 +792,55 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _LocationDetailHeaderView.validate()
+    }
+
+    struct _LocationDetailHeaderView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "LocationDetailHeaderView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LocationDetailHeaderView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LocationDetailHeaderView
+      }
+
+      static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "globe.europe.africa") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'globe.europe.africa' is used in nib 'LocationDetailHeaderView', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "info.circle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'info.circle' is used in nib 'LocationDetailHeaderView', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "rays") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'rays' is used in nib 'LocationDetailHeaderView', but couldn't be loaded.") } }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _LocationsListItemCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "LocationsListItemCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LocationsListItemCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LocationsListItemCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ResidentListItemCellTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ResidentListItemCellTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ResidentListItemCellTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ResidentListItemCellTableViewCell
       }
 
       fileprivate init() {}
