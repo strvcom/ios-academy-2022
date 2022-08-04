@@ -17,6 +17,8 @@ class LocationsListViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
+    weak var coordinator: LocationsListViewEventHandling?
+
     private lazy var backgroundView: UIView = {
         let view = UIBackgroundGradientView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +46,8 @@ private extension LocationsListViewController {
     }
 
     func setupView() {
+        navigationItem.title = R.string.localizable.tabTitleLocations()
+
         view.insertSubview(backgroundView, at: 0)
         view.addConstraints([
             view.topAnchor.constraint(equalTo: backgroundView.topAnchor),
@@ -63,6 +67,11 @@ private extension LocationsListViewController {
 
 // MARK: - Table view data source
 extension LocationsListViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let location = locations[indexPath.row]
+        coordinator?.handle(event: .didSelectLocation(location: location))
+    }
+
     func numberOfSections(in _: UITableView) -> Int {
         1
     }

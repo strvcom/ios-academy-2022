@@ -23,35 +23,48 @@ final class TabBarCoordinator {
 // MARK: - Coordinator lifecycle
 extension TabBarCoordinator: TabBarControllerCoordinator {
     func start() {
-        let viewControllers = [
-            makeLocationsScene(),
-            makeLocationDetailScene()
+        let coordinators = [
+            makeCharactersScene(),
+            makeEpisodesScene(),
+            makeLocationsScene()
         ]
-        tabBarController.setViewControllers(viewControllers.compactMap { $0 }, animated: false)
+
+        for coordinator in coordinators {
+            childCoordinators.append(coordinator)
+
+            coordinator.start()
+        }
+
+        tabBarController.setViewControllers(coordinators.map(\.rootViewController), animated: false)
     }
 }
 
 // MARK: - Factories
 extension TabBarCoordinator {
-    func makeLocationsScene() -> UIViewController? {
-        guard let viewController = R.storyboard.locationsListViewController().instantiateInitialViewController()
-        else {
-            return nil
-        }
+    func makeCharactersScene() -> ViewControllerCoordinator {
+        let coordinator = CharactersCoordinator(container: container)
 
-        viewController.tabBarItem.title = R.string.localizable.tabTitleLocations()
-        viewController.tabBarItem.image = .systemGlobe
-        return viewController
+        coordinator.rootViewController.tabBarItem.title = R.string.localizable.tabTitleCharacters()
+        coordinator.rootViewController.tabBarItem.image = .systemPerson
+
+        return coordinator
     }
 
-    func makeLocationDetailScene() -> UIViewController? {
-        guard let viewController = R.storyboard.locationDetailViewController().instantiateInitialViewController()
-        else {
-            return nil
-        }
+    func makeEpisodesScene() -> ViewControllerCoordinator {
+        let coordinator = EpisodesCoordinator(container: container)
 
-        viewController.tabBarItem.title = R.string.localizable.locationDetailInfo()
-        viewController.tabBarItem.image = .systemGlobe
-        return viewController
+        coordinator.rootViewController.tabBarItem.title = R.string.localizable.tabTitleEpisodes()
+        coordinator.rootViewController.tabBarItem.image = .systemFilm
+
+        return coordinator
+    }
+
+    func makeLocationsScene() -> ViewControllerCoordinator {
+        let coordinator = LocationsCoordinator(container: container)
+
+        coordinator.rootViewController.tabBarItem.title = R.string.localizable.tabTitleLocations()
+        coordinator.rootViewController.tabBarItem.image = .systemGlobe
+
+        return coordinator
     }
 }
