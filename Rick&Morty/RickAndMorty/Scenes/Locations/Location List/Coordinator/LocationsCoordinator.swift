@@ -9,23 +9,6 @@
 import DependencyInjection
 import UIKit
 
-protocol LocationDetailCoordinatoring: AnyObject {
-    var navigationController: UINavigationController { get }
-
-    func showLocationDetail(location: Location)
-}
-
-extension LocationDetailCoordinatoring {
-    func showLocationDetail(location: Location) {
-        let viewController: LocationDetailViewController = R.storyboard.locationDetailViewController().instantiateInitialViewController()!
-        viewController.location = location
-
-        navigationController.pushViewController(viewController, animated: true)
-    }
-}
-
-
-
 final class LocationsCoordinator {
     let container: Container
 
@@ -41,29 +24,36 @@ final class LocationsCoordinator {
 // MARK: NavigationControllerCoordinator
 extension LocationsCoordinator: NavigationControllerCoordinator {
     func start() {
-        navigationController.setViewControllers([makeLocationsScene()], animated: false)
+        navigationController.setViewControllers([makeLocationsList()], animated: false)
     }
 }
 
 // MARK: Factories
 extension LocationsCoordinator {
-    func makeLocationsScene() -> UIViewController {
-        let viewController: LocationsListViewController = R.storyboard.locationsListViewController().instantiateInitialViewController()!
+    func makeLocationsList() -> UIViewController {
+        // swiftlint:disable:next force_unwrapping
+        let viewController = R.storyboard.locationsListViewController.instantiateInitialViewController()!
+
         viewController.coordinator = self
+
         return viewController
     }
-}
 
-extension LocationsCoordinator: LocationDetailCoordinatoring { }
+    func makeLocationDetail(for location: Location) -> UIViewController {
+        // swiftlint:disable:next force_unwrapping
+        let viewController = R.storyboard.locationDetailViewController.instantiateInitialViewController()!
+        viewController.location = location
+        return viewController
+    }
+
+}
 
 // MARK: LocationsListViewEventHandling
 extension LocationsCoordinator: LocationsListViewEventHandling {
     func handle(event: LocationsListViewController.Event) {
         switch event {
         case .didSelectLocation(let location):
-            showLocationDetail(location: location)
-//            let locationDetailViewController = makeLocationDetailScene(location: location)
-//            navigationController.pushViewController(locationDetailViewController, animated: true)
+            navigationController.pushViewController(makeLocationDetail(for: location), animated: true)
         }
     }
 }

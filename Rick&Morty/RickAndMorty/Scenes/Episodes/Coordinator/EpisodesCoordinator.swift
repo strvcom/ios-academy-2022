@@ -27,4 +27,3 @@ extension EpisodesCoordinator: NavigationControllerCoordinator {
         navigationController.setViewControllers([UIViewController()], animated: false)
     }
 }
-

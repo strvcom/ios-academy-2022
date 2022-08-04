@@ -29,14 +29,13 @@ extension TabBarCoordinator: TabBarControllerCoordinator {
             makeLocationsScene()
         ]
 
-        coordinators.forEach { coordinator in
+        for coordinator in coordinators {
             childCoordinators.append(coordinator)
 
             coordinator.start()
         }
 
-        let viewControllers = coordinators.map(\.rootViewController)
-        tabBarController.setViewControllers(viewControllers, animated: false)
+        tabBarController.setViewControllers(coordinators.map(\.rootViewController), animated: false)
     }
 }
 

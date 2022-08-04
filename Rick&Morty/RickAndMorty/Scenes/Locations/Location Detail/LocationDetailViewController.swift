@@ -38,6 +38,7 @@ class LocationDetailViewController: UIViewController {
         return view
     }()
 
+    // #swiftlint:disable:next implicitly_unwrapped_optional
     var location: Location!
 
     private let residents: [Character] = {
