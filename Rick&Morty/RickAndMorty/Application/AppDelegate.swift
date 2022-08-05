@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppCoordinatorContaining 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         coordinator = AppCoordinator()
         coordinator.start()
-        
-        print("Character \(CharactersMock.characters[0])")
 
         return true
     }
