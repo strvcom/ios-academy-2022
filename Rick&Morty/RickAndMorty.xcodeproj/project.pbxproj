@@ -25,6 +25,8 @@
 		27FAC45E2479D452002F2A33 /* StoreRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAC4272479D452002F2A33 /* StoreRegistration.swift */; };
 		27FAC45F2479D452002F2A33 /* ManagerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAC4282479D452002F2A33 /* ManagerRegistration.swift */; };
 		2F240E6E21B185FA00E93D36 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F240E6D21B185FA00E93D36 /* R.generated.swift */; };
+		59DED191289D11CA00A14CC9 /* PreviewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59DED190289D11CA00A14CC9 /* PreviewAssets.xcassets */; };
+		59DED193289D11FB00A14CC9 /* CharactersMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DED192289D11FB00A14CC9 /* CharactersMock.swift */; };
 		756043300B384236749A0F8A /* Pods_defaults_RickAndMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33454648722DD949C227FA4E /* Pods_defaults_RickAndMorty.framework */; };
 		8FD926842899865D00C59893 /* LocationsListViewEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD926832899865D00C59893 /* LocationsListViewEventHandling.swift */; };
 		8FD92686289986F100C59893 /* LocationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD92685289986F100C59893 /* LocationsCoordinator.swift */; };
@@ -111,6 +113,8 @@
 		4FBEF2021031C41E5B9CFA7A /* Pods-defaults-RickAndMorty Tests.staging - debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-defaults-RickAndMorty Tests.staging - debug.xcconfig"; path = "Target Support Files/Pods-defaults-RickAndMorty Tests/Pods-defaults-RickAndMorty Tests.staging - debug.xcconfig"; sourceTree = "<group>"; };
 		515720951AC058ABEC583846 /* Pods-defaults-RickAndMorty Tests.development-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-defaults-RickAndMorty Tests.development-debug.xcconfig"; path = "Target Support Files/Pods-defaults-RickAndMorty Tests/Pods-defaults-RickAndMorty Tests.development-debug.xcconfig"; sourceTree = "<group>"; };
 		568B9F3260D45EA780166FE9 /* Pods-defaults-RickAndMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-defaults-RickAndMorty.debug.xcconfig"; path = "Target Support Files/Pods-defaults-RickAndMorty/Pods-defaults-RickAndMorty.debug.xcconfig"; sourceTree = "<group>"; };
+		59DED190289D11CA00A14CC9 /* PreviewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PreviewAssets.xcassets; sourceTree = "<group>"; };
+		59DED192289D11FB00A14CC9 /* CharactersMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersMock.swift; sourceTree = "<group>"; };
 		59F07BF29923FBAC9453DB43 /* Pods-defaults-RickAndMorty Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-defaults-RickAndMorty Tests.debug.xcconfig"; path = "Target Support Files/Pods-defaults-RickAndMorty Tests/Pods-defaults-RickAndMorty Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		60EF1F921B7A3DD15A758D56 /* Pods-defaults-RickAndMorty Tests.production-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-defaults-RickAndMorty Tests.production-release.xcconfig"; path = "Target Support Files/Pods-defaults-RickAndMorty Tests/Pods-defaults-RickAndMorty Tests.production-release.xcconfig"; sourceTree = "<group>"; };
 		63F7BCFE887AA7F035E434D7 /* Pods_defaults_RickAndMorty_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_defaults_RickAndMorty_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -344,6 +348,7 @@
 		27FAC40C2479D452002F2A33 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				59DED18F289D11C000A14CC9 /* PreviewAssets */,
 				C1C1AD7825E7D1B000B40A67 /* Fonts */,
 				ADFF70CC282D613F0050FF20 /* Assets.xcassets */,
 				27FAC40E2479D452002F2A33 /* Localizable.strings */,
@@ -432,6 +437,15 @@
 				27FAC3E62479D452002F2A33 /* Scenes */,
 			);
 			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		59DED18F289D11C000A14CC9 /* PreviewAssets */ = {
+			isa = PBXGroup;
+			children = (
+				59DED190289D11CA00A14CC9 /* PreviewAssets.xcassets */,
+				59DED192289D11FB00A14CC9 /* CharactersMock.swift */,
+			);
+			path = PreviewAssets;
 			sourceTree = "<group>";
 		};
 		80DDAB1A1607C933FE948655 /* Frameworks */ = {
@@ -721,6 +735,7 @@
 				27FAC44B2479D452002F2A33 /* Localizable.strings in Resources */,
 				FFD1EEAE28995BAE0096A79C /* LocationDetailResidentCell.xib in Resources */,
 				FF6A3030289289D400E569D0 /* LocationsListItemCell.xib in Resources */,
+				59DED191289D11CA00A14CC9 /* PreviewAssets.xcassets in Resources */,
 				ADED7583282E93BC00A30215 /* ClashDisplay.ttf in Resources */,
 				FFD1EEB228995BAE0096A79C /* LocationDetailInfoCell.xib in Resources */,
 				FFD1EEB028995BAE0096A79C /* LocationDetailHeaderView.xib in Resources */,
@@ -836,6 +851,7 @@
 				27FAC43E2479D452002F2A33 /* AppCoordinator.swift in Sources */,
 				FF6A302F289289D400E569D0 /* LocationsListItemCell.swift in Sources */,
 				ADFF70D4282D622B0050FF20 /* Font+App.swift in Sources */,
+				59DED193289D11FB00A14CC9 /* CharactersMock.swift in Sources */,
 				27FAC43D2479D452002F2A33 /* Configuration.swift in Sources */,
 				27FAC4412479D452002F2A33 /* NavigationControllerCoordinator.swift in Sources */,
 				27FAC4342479D452002F2A33 /* ActiveScene.swift in Sources */,
@@ -1021,6 +1037,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = RickAndMorty/Application/Resources/PreviewAssets;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1044,6 +1061,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = RickAndMorty/Application/Resources/PreviewAssets;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1130,6 +1148,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = RickAndMorty/Application/Resources/PreviewAssets;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1210,6 +1229,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = RickAndMorty/Application/Resources/PreviewAssets;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1296,6 +1316,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = RickAndMorty/Application/Resources/PreviewAssets;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1376,6 +1397,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = RickAndMorty/Application/Resources/PreviewAssets;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -29,6 +29,14 @@ struct Character {
 // MARK: - Conformances
 extension Character: Identifiable {}
 extension Character: Equatable {}
+// Explained in later chapter
+extension Character: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case id, name, species, type, gender, origin, location
+        case imageUrl = "image"
+        case episodeUrls = "episode"
+    }
+}
 
 // MARK: - Mock
 #if DEBUG

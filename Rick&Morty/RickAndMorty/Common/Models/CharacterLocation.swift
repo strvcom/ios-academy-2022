@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharacterLocation: Decodable {
+struct CharacterLocation {
     let name: String
     let locationId: Int?
 
@@ -24,6 +24,7 @@ struct CharacterLocation: Decodable {
 
 // MARK: - Conformances
 extension CharacterLocation: Equatable {}
+extension CharacterLocation: Decodable {} // Explained in later lesson
 
 // MARK: - Mock
 #if DEBUG
