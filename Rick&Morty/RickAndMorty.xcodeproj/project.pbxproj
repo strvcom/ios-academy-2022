@@ -1021,6 +1021,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1044,6 +1045,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1130,6 +1132,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1210,6 +1213,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1296,6 +1300,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1376,6 +1381,7 @@
 				CLANG_OPTIMIZATION_PROFILE_FILE = "OptimizationProfiles/$(PROJECT_NAME).profdata";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RickAndMorty/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

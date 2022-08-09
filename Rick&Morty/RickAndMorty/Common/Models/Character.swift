@@ -50,5 +50,27 @@ extension Character: Equatable {}
                 URL(string: "https://rickandmortyapi.com/api/episode/2")!
             ]
         )
+        
+        static let characters: [Character] = {
+            (0 ... 20).map {
+                Character(
+                    id: $0,
+                    name: "Rick Sanchez",
+                    species: "Human",
+                    type: "",
+                    gender: "Male",
+                    origin: .mock,
+                    location: .mock,
+                    // swiftlint:disable:next force_unwrapping
+                    imageUrl: URL(string: "https://rickandmortyapi.com/api/character/avatar/\($0 + 1).jpeg")!,
+                    episodeUrls: [
+                        // swiftlint:disable:next force_unwrapping
+                        URL(string: "https://rickandmortyapi.com/api/episode/1")!,
+                        // swiftlint:disable:next force_unwrapping
+                        URL(string: "https://rickandmortyapi.com/api/episode/2")!
+                    ]
+                )
+            }
+        }()
     }
 #endif
