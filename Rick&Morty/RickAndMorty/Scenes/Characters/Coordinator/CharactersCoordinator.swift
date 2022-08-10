@@ -29,6 +29,6 @@ extension CharactersCoordinator: NavigationControllerCoordinator {
     }
     
     func createCharactersListView() -> UIViewController {
-        UIHostingController<CharactersListView>(rootView: CharactersListView())
+        UIHostingController(rootView: CharactersListView())
     }
 }

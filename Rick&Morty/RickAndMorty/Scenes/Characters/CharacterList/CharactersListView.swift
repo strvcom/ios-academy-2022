@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CharactersListView: View {
-    @State var mode: Mode = .list
+    @State private var mode: Mode = .list
     
     let gridColumns: [GridItem] = Array(
         repeating: GridItem(.flexible(), spacing: 10),
@@ -52,6 +52,7 @@ struct CharactersListView: View {
             }
         }
         .padding(.horizontal, 16)
+        .transition(.fade)
     }
     
     @ViewBuilder private var gridView: some View {
@@ -60,6 +61,8 @@ struct CharactersListView: View {
                 CharacterGridItemView(character: character)
             }
         }
+        .padding(.horizontal, 10)
+        .transition(.fade)
     }
 }
 
