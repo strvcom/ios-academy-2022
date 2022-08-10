@@ -1,28 +1,13 @@
 import SwiftUI
 import PlaygroundSupport
 
+// If you are interested in SwiftUI tutorials,
+// there is a very nice tutorial from apple which you can
+// do https://developer.apple.com/tutorials/swiftui
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        Text("You can play here")
     }
 }
 
 PlaygroundPage.current.setLiveView(ContentView())
-
-// Show:
-// Layout
-//  1. HStack vs VStack vs ZStack
-//  2. GeometryReader
-//  3. Spacer
-// Scrolling
-//  1. ForEach
-//  2. ScrollView
-//  3. ListView
-// Controls
-//  1. Button
-//  2. TextField
-//  3. Toggle
-// Other
-//  1. Modifiers
-//  2. Color
-//  3. Gestures
