@@ -87,5 +87,23 @@ extension Episode: Equatable {}
                 URL(string: "https://rickandmortyapi.com/api/character/2")!
             ]
         )
+        
+        static let episodes: [Episode] = {
+            (0 ... 20).map {
+                // swiftlint:disable:next force_try
+                try! Episode(
+                    id: $0,
+                    name: "Pilot",
+                    code: "S01E01",
+                    airDate: "December 2, 2013",
+                    characterUrls: [
+                        // swiftlint:disable:next force_unwrapping
+                        URL(string: "https://rickandmortyapi.com/api/character/1")!,
+                        // swiftlint:disable:next force_unwrapping
+                        URL(string: "https://rickandmortyapi.com/api/character/2")!
+                    ]
+                )
+            }
+        }()
     }
 #endif
