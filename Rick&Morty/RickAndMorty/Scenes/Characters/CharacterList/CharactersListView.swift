@@ -9,7 +9,13 @@
 import SwiftUI
 
 struct CharactersListView: View {
+    enum Event {
+        case didSelectCharacter(character: Character)
+    }
+    
     @State private var mode: Mode = .list
+    
+    weak var coordinator: CharactersListEventHandling?
     
     let gridColumns: [GridItem] = Array(
         repeating: GridItem(.flexible(), spacing: 10),
@@ -49,6 +55,9 @@ struct CharactersListView: View {
         LazyVStack(alignment: .leading, spacing: 12) {
             ForEach(Character.characters) { character in
                 CharacterRowItemView(character: character)
+                    .onTapGesture {
+                        coordinator?.handle(event: .didSelectCharacter(character: character))
+                    }
             }
         }
         .padding(.horizontal, 16)
@@ -59,6 +68,9 @@ struct CharactersListView: View {
         LazyVGrid(columns: gridColumns, spacing: 10) {
             ForEach(Character.characters) { character in
                 CharacterGridItemView(character: character)
+                    .onTapGesture {
+                        coordinator?.handle(event: .didSelectCharacter(character: character))
+                    }
             }
         }
         .padding(.horizontal, 10)
