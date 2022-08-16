@@ -8,6 +8,7 @@
 
 import DependencyInjection
 import UIKit
+import SwiftUI
 
 final class EpisodesCoordinator {
     let container: Container
@@ -24,6 +25,10 @@ final class EpisodesCoordinator {
 // MARK: NavigationControllerCoordinator
 extension EpisodesCoordinator: NavigationControllerCoordinator {
     func start() {
-        navigationController.setViewControllers([UIViewController()], animated: false)
+        navigationController.setViewControllers([createEpisodesListView()], animated: false)
+    }
+    
+    func createEpisodesListView() -> UIViewController {
+        UIHostingController(rootView: EpisodesListView())
     }
 }
