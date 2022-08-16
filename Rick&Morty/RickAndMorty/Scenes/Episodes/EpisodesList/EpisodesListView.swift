@@ -13,7 +13,6 @@ struct EpisodesListView: View {
         ZStack {
             BackgroundGradientView()
             content
-
         }
         .navigationTitle(R.string.localizable.tabTitleEpisodes())
         .foregroundColor(.appTextBody)
