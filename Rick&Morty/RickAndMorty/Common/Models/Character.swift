@@ -55,7 +55,7 @@ extension Character: Equatable {}
             (0 ... 20).map {
                 Character(
                     id: $0,
-                    name: "Rick Sanchez",
+                    name: "Rick Sanchez - \($0)",
                     species: "Human",
                     type: "",
                     gender: "Male",

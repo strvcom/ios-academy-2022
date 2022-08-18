@@ -25,10 +25,32 @@ final class CharactersCoordinator {
 // MARK: NavigationControllerCoordinator
 extension CharactersCoordinator: NavigationControllerCoordinator {
     func start() {
-        navigationController.setViewControllers([createCharactersListView()], animated: false)
+        navigationController.setViewControllers([makeCharactersListView()], animated: false)
+    }
+}
+
+// MARK: - Factories
+extension CharactersCoordinator {
+    func makeCharactersListView() -> UIViewController {
+        UIHostingController(rootView: CharactersListView(coordinator: self))
     }
     
-    func createCharactersListView() -> UIViewController {
-        UIHostingController(rootView: CharactersListView())
+    func makeCharacterDetailView(character: Character) -> UIViewController {
+        UIHostingController(
+            rootView: CharacterDetailView(character: character)
+        )
+    }
+}
+
+// MARK: - Characters List Event Handling
+extension CharactersCoordinator: CharactersListEventHandling {
+    func handle(event: CharactersListView.Event) {
+        switch event {
+        case let .didSelectCharacter(character):
+            navigationController.pushViewController(
+                makeCharacterDetailView(character: character),
+                animated: true
+            )
+        }
     }
 }
