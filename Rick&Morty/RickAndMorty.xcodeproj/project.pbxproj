@@ -38,6 +38,7 @@
 		8FD9268C28998BFC00C59893 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9268B28998BFC00C59893 /* CharactersCoordinator.swift */; };
 		8FD9268E28998C0500C59893 /* EpisodesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9268D28998C0500C59893 /* EpisodesCoordinator.swift */; };
 		AD28704D2809A0DA0080AD7F /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = AD28704C2809A0DA0080AD7F /* DependencyInjection */; };
+		AD3619F828B4FDD900A9A0DB /* CharacterDetailEpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3619F728B4FDD900A9A0DB /* CharacterDetailEpisodeView.swift */; };
 		AD3D6682283BB32F000C8BAA /* UIBackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3D6681283BB32F000C8BAA /* UIBackgroundGradientView.swift */; };
 		AD5D11AF28354122004F7774 /* UITableView+RegistrationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5D11A628354122004F7774 /* UITableView+RegistrationHelpers.swift */; };
 		AD5D11B228354122004F7774 /* UILabel+DynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5D11A928354122004F7774 /* UILabel+DynamicFont.swift */; };
@@ -64,8 +65,6 @@
 		ADFF70D3282D622B0050FF20 /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF70D1282D622B0050FF20 /* Color+App.swift */; };
 		ADFF70D4282D622B0050FF20 /* Font+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF70D2282D622B0050FF20 /* Font+App.swift */; };
 		ADFF710F282D648E0050FF20 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF710C282D648E0050FF20 /* BackgroundGradientView.swift */; };
-		ADFF7110282D648E0050FF20 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF710D282D648E0050FF20 /* WebView.swift */; };
-		ADFF7111282D648E0050FF20 /* WebRenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF710E282D648E0050FF20 /* WebRenderingView.swift */; };
 		ADFF7115282D64E60050FF20 /* Alignment+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF7112282D64E60050FF20 /* Alignment+Custom.swift */; };
 		ADFF7117282D64E60050FF20 /* OnFirstAppearViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF7114282D64E60050FF20 /* OnFirstAppearViewModifier.swift */; };
 		ADFF711A282D66A10050FF20 /* ProvidedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF7119282D66A10050FF20 /* ProvidedData.swift */; };
@@ -141,6 +140,7 @@
 		A2253E65BF755037DFD29196 /* Pods-defaults-RickAndMorty.staging - debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-defaults-RickAndMorty.staging - debug.xcconfig"; path = "Target Support Files/Pods-defaults-RickAndMorty/Pods-defaults-RickAndMorty.staging - debug.xcconfig"; sourceTree = "<group>"; };
 		A79BEE1BBFD57F830FCFD305 /* Pods-defaults-RickAndMorty Tests.staging-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-defaults-RickAndMorty Tests.staging-debug.xcconfig"; path = "Target Support Files/Pods-defaults-RickAndMorty Tests/Pods-defaults-RickAndMorty Tests.staging-debug.xcconfig"; sourceTree = "<group>"; };
 		A7D49C8AFAB6529D42541AF8 /* Pods-defaults-RickAndMorty Tests.development-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-defaults-RickAndMorty Tests.development-release.xcconfig"; path = "Target Support Files/Pods-defaults-RickAndMorty Tests/Pods-defaults-RickAndMorty Tests.development-release.xcconfig"; sourceTree = "<group>"; };
+		AD3619F728B4FDD900A9A0DB /* CharacterDetailEpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailEpisodeView.swift; sourceTree = "<group>"; };
 		AD3D6681283BB32F000C8BAA /* UIBackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBackgroundGradientView.swift; sourceTree = "<group>"; };
 		AD5D11A628354122004F7774 /* UITableView+RegistrationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RegistrationHelpers.swift"; sourceTree = "<group>"; };
 		AD5D11A928354122004F7774 /* UILabel+DynamicFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+DynamicFont.swift"; sourceTree = "<group>"; };
@@ -167,8 +167,6 @@
 		ADFF70D1282D622B0050FF20 /* Color+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
 		ADFF70D2282D622B0050FF20 /* Font+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+App.swift"; sourceTree = "<group>"; };
 		ADFF710C282D648E0050FF20 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
-		ADFF710D282D648E0050FF20 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		ADFF710E282D648E0050FF20 /* WebRenderingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRenderingView.swift; sourceTree = "<group>"; };
 		ADFF7112282D64E60050FF20 /* Alignment+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alignment+Custom.swift"; sourceTree = "<group>"; };
 		ADFF7114282D64E60050FF20 /* OnFirstAppearViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnFirstAppearViewModifier.swift; sourceTree = "<group>"; };
 		ADFF7119282D66A10050FF20 /* ProvidedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvidedData.swift; sourceTree = "<group>"; };
@@ -452,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				2FB2B0CC28AC05E200941259 /* CharacterDetailView.swift */,
+				AD3619F728B4FDD900A9A0DB /* CharacterDetailEpisodeView.swift */,
 			);
 			path = CharacterDetail;
 			sourceTree = "<group>";
@@ -604,8 +603,6 @@
 			children = (
 				ADFF710C282D648E0050FF20 /* BackgroundGradientView.swift */,
 				AD3D6681283BB32F000C8BAA /* UIBackgroundGradientView.swift */,
-				ADFF710E282D648E0050FF20 /* WebRenderingView.swift */,
-				ADFF710D282D648E0050FF20 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -886,7 +883,6 @@
 				27FAC4412479D452002F2A33 /* NavigationControllerCoordinator.swift in Sources */,
 				27FAC4342479D452002F2A33 /* ActiveScene.swift in Sources */,
 				59DE635828A2C7C0002F8510 /* CharactersListView.swift in Sources */,
-				ADFF7110282D648E0050FF20 /* WebView.swift in Sources */,
 				27FAC4422479D452002F2A33 /* SceneCoordinating.swift in Sources */,
 				2F240E6E21B185FA00E93D36 /* R.generated.swift in Sources */,
 				ADFF70C9282D5FDE0050FF20 /* PaginatedResponse.swift in Sources */,
@@ -898,6 +894,7 @@
 				2FB2B0CD28AC05E200941259 /* CharacterDetailView.swift in Sources */,
 				27FAC43F2479D452002F2A33 /* AppCoordinating.swift in Sources */,
 				8FD9268E28998C0500C59893 /* EpisodesCoordinator.swift in Sources */,
+				AD3619F828B4FDD900A9A0DB /* CharacterDetailEpisodeView.swift in Sources */,
 				AD5D11B228354122004F7774 /* UILabel+DynamicFont.swift in Sources */,
 				27FAC45F2479D452002F2A33 /* ManagerRegistration.swift in Sources */,
 				2FB2B0CA28AC00D400941259 /* CharactersListEventHandling.swift in Sources */,
@@ -918,7 +915,6 @@
 				ADFF70AE282D5A1F0050FF20 /* TabBarCoordinator.swift in Sources */,
 				59EC334C28ABB219005E4F7E /* EpisodesListItemView.swift in Sources */,
 				AD5D11B8283541C1004F7774 /* NibLoadableView.swift in Sources */,
-				ADFF7111282D648E0050FF20 /* WebRenderingView.swift in Sources */,
 				FFD1EEAF28995BAE0096A79C /* LocationDetailResidentCell.swift in Sources */,
 				AD5D11D72836A45F004F7774 /* Rswift+Font.swift in Sources */,
 				27FAC4402479D452002F2A33 /* AppCoordinatorContaining.swift in Sources */,

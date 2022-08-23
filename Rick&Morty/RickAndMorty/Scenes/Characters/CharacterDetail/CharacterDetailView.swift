@@ -11,6 +11,7 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     let character: Character
+    let mockedEpisodes = Episode.episodes
     
     var body: some View {
         ZStack {
@@ -33,8 +34,12 @@ struct CharacterDetailView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                
-                info
+
+                VStack(alignment: .leading, spacing: 16) {
+                    info
+
+                    episodes
+                }
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 16)
@@ -101,5 +106,20 @@ struct CharacterDetailView: View {
             .font(.appItemDescription)
         }
         .padding(.horizontal, 8)
+    }
+    
+    @ViewBuilder var episodes: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text(R.string.localizable.characterDetailEpisodes())
+                .font(.appSectionTitle)
+                .foregroundColor(.appTextSectionTitle)
+                .padding(.leading, 8)
+
+            VStack(spacing: 8) {
+                ForEach(mockedEpisodes) { episode in
+                    CharacterDetailEpisodeView(episode: episode)
+                }
+            }
+        }
     }
 }
