@@ -9,6 +9,12 @@
 import SwiftUI
 
 struct EpisodesListView: View {
+    enum Event {
+        case didSelectEpisode(episode: Episode)
+    }
+    
+    weak var coordinator: EpisodesListViewEventHandling?
+    
     var body: some View {
         ZStack {
             BackgroundGradientView()
@@ -24,6 +30,9 @@ struct EpisodesListView: View {
             LazyVStack {
                 ForEach(Episode.episodes) { episode in
                     EpisodesListItemView(episode: episode)
+                        .onTapGesture {
+                            coordinator?.handle(event: .didSelectEpisode(episode: episode))
+                        }
                 }
             }
             .padding(.horizontal, 8)

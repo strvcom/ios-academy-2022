@@ -48,14 +48,8 @@ private extension LocationsListViewController {
     func setupView() {
         navigationItem.title = R.string.localizable.tabTitleLocations()
 
-        view.insertSubview(backgroundView, at: 0)
-        view.addConstraints([
-            view.topAnchor.constraint(equalTo: backgroundView.topAnchor),
-            view.rightAnchor.constraint(equalTo: backgroundView.rightAnchor),
-            view.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor),
-            view.leftAnchor.constraint(equalTo: backgroundView.leftAnchor)
-        ])
-
+        tableView.backgroundView = backgroundView
+        
         loadingIndicator.color = .appTintNavigationBar
         loadingIndicator.isHidden = true
 

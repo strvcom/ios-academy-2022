@@ -29,6 +29,26 @@ extension EpisodesCoordinator: NavigationControllerCoordinator {
     }
     
     func createEpisodesListView() -> UIViewController {
-        UIHostingController(rootView: EpisodesListView())
+        UIHostingController(rootView: EpisodesListView(coordinator: self))
+    }
+    
+    func createWebView(url: URL) -> UIViewController {
+        let webView = WebView(url: url)
+        
+        return UIHostingController(rootView: webView)
+    }
+}
+
+// MARK: Episodes List View Event Handling
+extension EpisodesCoordinator: EpisodesListViewEventHandling {
+    func handle(event: EpisodesListView.Event) {
+        switch event {
+        case .didSelectEpisode(let episode):
+            guard let url = episode.rottenTomatoesUrl else {
+                return
+            }
+            
+            navigationController.present(createWebView(url: url), animated: true)
+        }
     }
 }

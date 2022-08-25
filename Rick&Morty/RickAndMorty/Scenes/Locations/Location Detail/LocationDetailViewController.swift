@@ -63,13 +63,7 @@ private extension LocationDetailViewController {
     }
 
     func setupView() {
-        view.insertSubview(backgroundView, at: 0)
-        view.addConstraints([
-            view.topAnchor.constraint(equalTo: backgroundView.topAnchor),
-            view.rightAnchor.constraint(equalTo: backgroundView.rightAnchor),
-            view.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor),
-            view.leftAnchor.constraint(equalTo: backgroundView.leftAnchor)
-        ])
+        tableView.backgroundView = backgroundView
 
         loadingIndicator.color = .appTintNavigationBar
 
