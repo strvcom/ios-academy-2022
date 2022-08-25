@@ -8,7 +8,6 @@
 
 import Combine
 import UIKit
-import SwiftUI
 
 class LocationsListViewController: UIViewController {
     enum Event {
@@ -48,17 +47,6 @@ private extension LocationsListViewController {
 
     func setupView() {
         navigationItem.title = R.string.localizable.tabTitleLocations()
-
-//        let charactersList = UIHostingController(rootView: CharactersListView())
-//        charactersList.view.translatesAutoresizingMaskIntoConstraints = false
-//
-//        view.addSubview(charactersList.view)
-//        view.addConstraints([
-//            view.topAnchor.constraint(equalTo: charactersList.view.topAnchor),
-//            view.leftAnchor.constraint(equalTo: charactersList.view.leftAnchor),
-//            charactersList.view.widthAnchor.constraint(equalToConstant: 100),
-//            charactersList.view.heightAnchor.constraint(equalToConstant: 100)
-//        ])
 
         tableView.backgroundView = backgroundView
         
