@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='Enums'/>
+        <page name='Protocols'/>
+        <page name='Protocol inheritance'/>
+        <page name='Associated type'/>
+        <page name='Generics'/>
+        <page name='Swift concurrency'/>
+        <page name='PropertyWrappers'/>
+    </pages>
+</playground>
