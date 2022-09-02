@@ -102,14 +102,6 @@ struct EpisodeDetailView: View {
         }
         .padding(.horizontal, 8)
     }
-
-    @ViewBuilder var webViewError: some View {
-        ZStack {
-            BackgroundGradientView()
-
-            Text(R.string.localizable.generalStateErrorSomethingWentWrong())
-        }
-    }
 }
 
 // MARK: - Actions
