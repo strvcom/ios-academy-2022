@@ -8,7 +8,7 @@
 
 import Foundation
 
-@MainActor final class LocationsListStore: ObservableObject {
+@MainActor final class LocationsListStore {
     @Published var locations: [Location] = .init()
 }
 
