@@ -10,8 +10,7 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct CharacterDetailView: View {
-    let character: Character
-    let mockedEpisodes = Episode.episodes
+    @StateObject var store: CharacterDetailStore
     
     var body: some View {
         ZStack {
@@ -19,7 +18,8 @@ struct CharacterDetailView: View {
             
             content
         }
-        .navigationTitle(character.name)
+        .onFirstAppear(perform: load)
+        .navigationTitle(store.character.name)
         .foregroundColor(.appTextBody)
         .preferredColorScheme(.none)
     }
@@ -27,7 +27,7 @@ struct CharacterDetailView: View {
     var content: some View {
         ScrollView {
             VStack(spacing: 16) {
-                WebImage(url: character.imageUrl)
+                WebImage(url: store.character.imageUrl)
                     .placeholder {
                         ProgressView()
                     }
@@ -57,22 +57,22 @@ struct CharacterDetailView: View {
                     HStack(alignment: .top, spacing: 8) {
                         Image.systemCreditCard
                         
-                        Text(character.name)
+                        Text(store.character.name)
                             .alignmentGuide(.horizontalInfoAlignment) { $0[.leading] }
                     }
                     
                     HStack(alignment: .top, spacing: 8) {
                         Image.systemPersonFillQuestionMark
                         
-                        Text(character.species)
+                        Text(store.character.species)
                             .alignmentGuide(.horizontalInfoAlignment) { $0[.leading] }
                     }
                     
-                    if !character.type.isEmpty {
+                    if !store.character.type.isEmpty {
                         HStack(alignment: .top, spacing: 8) {
                             Image.systemPersonFillViewFinder
 
-                            Text(character.type)
+                            Text(store.character.type)
                                 .alignmentGuide(.horizontalInfoAlignment) { $0[.leading] }
                         }
                     }
@@ -80,7 +80,7 @@ struct CharacterDetailView: View {
                     HStack(alignment: .top, spacing: 8) {
                         Image.systemPersonAndArrowLeft
                         
-                        Text(character.gender)
+                        Text(store.character.gender)
                             .alignmentGuide(.horizontalInfoAlignment) { $0[.leading] }
                     }
                 }
@@ -90,14 +90,14 @@ struct CharacterDetailView: View {
                     HStack(alignment: .top, spacing: 8) {
                         Image.systemGlobe
                         
-                        Text(character.origin.name)
+                        Text(store.character.origin.name)
                             .alignmentGuide(.horizontalInfoAlignment) { $0[.leading] }
                     }
                     
                     HStack(alignment: .top, spacing: 8) {
                         Image.systemEyes
                         
-                        Text(character.location.name)
+                        Text(store.character.location.name)
                             .alignmentGuide(.horizontalInfoAlignment) { $0[.leading] }
                     }
                 }
@@ -116,10 +116,19 @@ struct CharacterDetailView: View {
                 .padding(.leading, 8)
 
             VStack(spacing: 8) {
-                ForEach(mockedEpisodes) { episode in
+                ForEach(store.mockedEpisodes) { episode in
                     CharacterDetailEpisodeView(episode: episode)
                 }
             }
+        }
+    }
+}
+
+// MARK: - Actions
+private extension CharacterDetailView {
+    func load() {
+        Task {
+            await store.load()
         }
     }
 }

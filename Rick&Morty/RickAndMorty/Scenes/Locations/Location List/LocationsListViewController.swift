@@ -17,6 +17,8 @@ class LocationsListViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    var store: LocationsListStore!
     weak var coordinator: LocationsListViewEventHandling?
 
     private lazy var backgroundView: UIView = {
@@ -24,18 +26,13 @@ class LocationsListViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
-    private let locations: [Location] = {
-        // Initialize with 100 Location mocks.
-        (0...99).map { _ in
-            Location.mock
-        }
-    }()
+    private var cancellables = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+        load()
     }
 }
 
@@ -43,6 +40,7 @@ class LocationsListViewController: UIViewController {
 private extension LocationsListViewController {
     func setup() {
         setupView()
+        bindViewData()
     }
 
     func setupView() {
@@ -57,12 +55,32 @@ private extension LocationsListViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    func bindViewData() {
+        store
+            .$locations
+            .sink { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
+            .store(in: &cancellables)
+    }
+}
+
+// MARK: - Actions
+private extension LocationsListViewController {
+    func load() {
+        Task {
+            await store.load()
+        }
+    }
 }
 
 // MARK: - Table view data source
 extension LocationsListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let location = locations[indexPath.row]
+        let location = store.locations[indexPath.row]
         coordinator?.handle(event: .didSelectLocation(location: location))
     }
 
@@ -71,12 +89,12 @@ extension LocationsListViewController: UITableViewDataSource, UITableViewDelegat
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        locations.count
+        store.locations.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: LocationsListItemCell = tableView.dequeueReusableCell(for: indexPath)
-        let location = locations[indexPath.row]
+        let location = store.locations[indexPath.row]
 
         cell.configure(with: location)
 

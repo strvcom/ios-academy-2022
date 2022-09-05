@@ -34,6 +34,8 @@ extension LocationsCoordinator {
         // swiftlint:disable:next force_unwrapping
         let viewController = R.storyboard.locationsListViewController.instantiateInitialViewController()!
 
+        let store = container.resolve(type: LocationsListStore.self)
+        viewController.store = store
         viewController.coordinator = self
 
         return viewController
