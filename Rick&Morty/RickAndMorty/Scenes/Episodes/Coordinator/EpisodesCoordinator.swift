@@ -31,7 +31,13 @@ extension EpisodesCoordinator: NavigationControllerCoordinator {
     func createEpisodesListView() -> UIViewController {
         UIHostingController(rootView: EpisodesListView(coordinator: self))
     }
-    
+
+    func createEpisodeDetail(for episode: Episode) -> UIViewController {
+        let episodeDetail = EpisodeDetailView(episode: episode, coordinator: self)
+
+        return UIHostingController(rootView: episodeDetail)
+    }
+
     func createWebView(url: URL) -> UIViewController {
         let webView = WebView(url: url)
         
@@ -44,10 +50,16 @@ extension EpisodesCoordinator: EpisodesListViewEventHandling {
     func handle(event: EpisodesListView.Event) {
         switch event {
         case .didSelectEpisode(let episode):
-            guard let url = episode.rottenTomatoesUrl else {
-                return
-            }
-            
+            navigationController.pushViewController(createEpisodeDetail(for: episode), animated: true)
+        }
+    }
+}
+
+// MARK: Episodes Detail View Event Handling
+extension EpisodesCoordinator: EpisodeDetailViewEventHandling {
+    func handle(event: EpisodeDetailView.Event) {
+        switch event {
+        case .didTapOnOpenWeb(let url):
             navigationController.present(createWebView(url: url), animated: true)
         }
     }
