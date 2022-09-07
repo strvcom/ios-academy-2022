@@ -36,8 +36,9 @@ extension CharactersCoordinator {
     }
     
     func makeCharacterDetailView(character: Character) -> UIViewController {
-        UIHostingController(
-            rootView: CharacterDetailView(character: character)
+        let store = container.resolve(type: CharacterDetailStore.self, argument: character)
+        return UIHostingController(
+            rootView: CharacterDetailView(store: store)
         )
     }
 }
