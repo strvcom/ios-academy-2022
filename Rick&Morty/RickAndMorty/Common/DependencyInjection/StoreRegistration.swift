@@ -29,5 +29,9 @@ import DependencyInjection
                 episode: episode
             )
         }
+        
+        container.register(type: CharactersListStore.self, in: .new) { _ in
+            CharactersListStore()
+        }
     }
 }

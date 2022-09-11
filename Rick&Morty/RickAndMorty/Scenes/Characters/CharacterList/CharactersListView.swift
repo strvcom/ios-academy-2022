@@ -14,7 +14,7 @@ struct CharactersListView: View {
     }
     
     @State private var mode: Mode = .list
-    
+    @StateObject var store: CharactersListStore
     weak var coordinator: CharactersListEventHandling?
     
     let gridColumns: [GridItem] = Array(
@@ -36,6 +36,7 @@ struct CharactersListView: View {
                 }
             }
         }
+        .onFirstAppear(perform: load)
         .foregroundColor(.appTextBody)
         .preferredColorScheme(.none)
     }
@@ -53,7 +54,7 @@ struct CharactersListView: View {
     
     @ViewBuilder private var listView: some View {
         LazyVStack(alignment: .leading, spacing: 12) {
-            ForEach(Character.characters) { character in
+            ForEach(store.characters) { character in
                 CharacterRowItemView(character: character)
                     .onTapGesture {
                         coordinator?.handle(event: .didSelectCharacter(character: character))
@@ -66,7 +67,7 @@ struct CharactersListView: View {
     
     @ViewBuilder private var gridView: some View {
         LazyVGrid(columns: gridColumns, spacing: 10) {
-            ForEach(Character.characters) { character in
+            ForEach(store.characters) { character in
                 CharacterGridItemView(character: character)
                     .onTapGesture {
                         coordinator?.handle(event: .didSelectCharacter(character: character))
@@ -80,6 +81,12 @@ struct CharactersListView: View {
 
 // MARK: - Actions
 private extension CharactersListView {
+    func load() {
+        Task {
+            await store.load()
+        }
+    }
+
     func toggleMode() {
         withAnimation {
             mode.toggle()
@@ -116,6 +123,6 @@ extension CharactersListView {
 // MARK: - Previews
 struct CharactersListView_Previews: PreviewProvider {
     static var previews: some View {
-        CharactersListView()
+        CharactersListView(store: .init())
     }
 }
