@@ -15,6 +15,7 @@ final class LocationsListStore {
 // MARK: - Actions
 extension LocationsListStore {
     func load() {
+        // wait 2 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.locations = {
                 // Initialize with 100 Location mocks.

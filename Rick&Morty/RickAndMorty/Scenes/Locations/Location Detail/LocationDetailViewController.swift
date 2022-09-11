@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 class LocationDetailViewController: UIViewController {
     enum Section: Int, CaseIterable {
@@ -32,27 +33,22 @@ class LocationDetailViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
+    private var cancellables = Set<AnyCancellable>()
     private lazy var backgroundView: UIView = {
         let view = UIBackgroundGradientView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    // #swiftlint:disable:next implicitly_unwrapped_optional
-    var location: Location!
-
-    private let residents: [Character] = {
-        // Initialize with 100 Character mocks.
-        (0...99).map { _ in
-            Character.mock
-        }
-    }()
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    var store: LocationDetailStore!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
-        configure(for: location)
+        load()
+        
     }
 }
 
@@ -60,6 +56,7 @@ class LocationDetailViewController: UIViewController {
 private extension LocationDetailViewController {
     func setup() {
         setupView()
+        bindViewData()
     }
 
     func setupView() {
@@ -80,6 +77,31 @@ private extension LocationDetailViewController {
 
         self.tableView.reloadData()
     }
+    
+    func bindViewData() {
+        store
+            .$location
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] location in
+                self?.configure(for: location)
+            }
+            .store(in: &cancellables)
+
+        store
+            .$residents
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+    }
+}
+
+// MARK: - Actions
+private extension LocationDetailViewController {
+    func load() {
+        store.load()
+    }
 }
 
 // MARK: - Table view data source & delegate
@@ -97,7 +119,7 @@ extension LocationDetailViewController: UITableViewDataSource, UITableViewDelega
         case .info:
             return 3
         case .residents:
-            return residents.count
+            return store.residents.count
         }
     }
 
@@ -115,7 +137,7 @@ extension LocationDetailViewController: UITableViewDataSource, UITableViewDelega
             return cell
         case .residents:
             let cell: LocationDetailResidentCell = tableView.dequeueReusableCell(for: indexPath)
-            let resident = residents[indexPath.row]
+            let resident = store.residents[indexPath.row]
 
             cell.configure(with: resident)
 
@@ -133,11 +155,11 @@ extension LocationDetailViewController: UITableViewDataSource, UITableViewDelega
 
         switch row {
         case .name:
-            locationInfoCell.configure(with: .systemInfoCircle, title: location.name)
+            locationInfoCell.configure(with: .systemInfoCircle, title: store.location.name)
         case .type:
-            locationInfoCell.configure(with: .systemGlobe, title: location.type)
+            locationInfoCell.configure(with: .systemGlobe, title: store.location.type)
         case .dimension:
-            locationInfoCell.configure(with: .systemRays, title: location.dimension)
+            locationInfoCell.configure(with: .systemRays, title: store.location.dimension)
         }
     }
 

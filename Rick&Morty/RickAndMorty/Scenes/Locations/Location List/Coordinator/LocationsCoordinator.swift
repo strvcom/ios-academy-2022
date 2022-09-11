@@ -44,10 +44,12 @@ extension LocationsCoordinator {
     func makeLocationDetail(for location: Location) -> UIViewController {
         // swiftlint:disable:next force_unwrapping
         let viewController = R.storyboard.locationDetailViewController.instantiateInitialViewController()!
-        viewController.location = location
+        let store = container.resolve(type: LocationDetailStore.self, argument: location)
+        
+        viewController.store = store
+        
         return viewController
     }
-
 }
 
 // MARK: LocationsListViewEventHandling
