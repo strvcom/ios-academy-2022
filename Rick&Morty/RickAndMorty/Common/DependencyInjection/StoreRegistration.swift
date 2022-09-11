@@ -23,5 +23,11 @@ import DependencyInjection
         container.register(type: EpisodesListStore.self, in: .new) { _ in
             EpisodesListStore()
         }
+    
+        container.register(type: EpisodeDetailStore.self) { _, episode in
+            EpisodeDetailStore(
+                episode: episode
+            )
+        }
     }
 }

@@ -12,26 +12,26 @@ struct EpisodeDetailView: View {
         case didTapOnOpenWeb(url: URL)
     }
 
-    let episode: Episode
-    let mockedCharacters = Character.characters
+    @StateObject var store: EpisodeDetailStore
     weak var coordinator: EpisodeDetailViewEventHandling?
 
     var body: some View {
         ZStack(alignment: .topLeading) {
             BackgroundGradientView()
 
-            makeContent(for: episode)
+            makeContent(for: store.episode)
         }
-        .navigationTitle(episode.name)
+        .navigationTitle(store.episode.name)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                if episode.rottenTomatoesUrl != nil {
+                if store.episode.rottenTomatoesUrl != nil {
                     Button(action: showRottenTomatoes) {
                         Image.systemSafari
                     }
                 }
             }
         }
+        .onFirstAppear(perform: load)
         .foregroundColor(.appTextBody)
         .preferredColorScheme(.none)
     }
@@ -44,7 +44,7 @@ struct EpisodeDetailView: View {
                 .padding(.leading, 8)
 
             VStack(spacing: 8) {
-                ForEach(mockedCharacters) { character in
+                ForEach(store.mockedCharacters) { character in
                     EpisodeDetailCharacterView(character: character)
                 }
             }
@@ -106,8 +106,14 @@ struct EpisodeDetailView: View {
 
 // MARK: - Actions
 private extension EpisodeDetailView {
+    func load() {
+        Task {
+            await store.load()
+        }
+    }
+
     func showRottenTomatoes() {
-        guard let url = episode.rottenTomatoesUrl else {
+        guard let url = store.episode.rottenTomatoesUrl else {
             return
         }
 
@@ -119,7 +125,7 @@ private extension EpisodeDetailView {
 struct EpisodeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         EpisodeDetailView(
-            episode: .mock
+            store: EpisodeDetailStore(episode: .mock)
         )
     }
 }
