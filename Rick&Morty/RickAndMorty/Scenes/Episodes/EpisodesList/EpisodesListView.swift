@@ -13,6 +13,7 @@ struct EpisodesListView: View {
         case didSelectEpisode(episode: Episode)
     }
     
+    @StateObject var store: EpisodesListStore
     weak var coordinator: EpisodesListViewEventHandling?
     
     var body: some View {
@@ -21,6 +22,7 @@ struct EpisodesListView: View {
             content
         }
         .navigationTitle(R.string.localizable.tabTitleEpisodes())
+        .onFirstAppear(perform: load)
         .foregroundColor(.appTextBody)
         .preferredColorScheme(.none)
     }
@@ -28,7 +30,7 @@ struct EpisodesListView: View {
     @ViewBuilder private var content: some View {
         ScrollView {
             LazyVStack {
-                ForEach(Episode.episodes) { episode in
+                ForEach(store.episodes) { episode in
                     EpisodesListItemView(episode: episode)
                         .onTapGesture {
                             coordinator?.handle(event: .didSelectEpisode(episode: episode))
@@ -40,10 +42,18 @@ struct EpisodesListView: View {
     }
 }
 
+// MARK: - Actions
+private extension EpisodesListView {
+    func load() {
+        Task {
+            await store.load()
+        }
+    }
+}
 
 // MARK: - Previews
 struct EpisodesListView_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodesListView()
+        EpisodesListView(store: .init())
     }
 }
