@@ -32,7 +32,10 @@ extension CharactersCoordinator: NavigationControllerCoordinator {
 // MARK: - Factories
 extension CharactersCoordinator {
     func makeCharactersListView() -> UIViewController {
-        UIHostingController(rootView: CharactersListView(coordinator: self))
+        let store = container.resolve(type: CharactersListStore.self)
+        let charactersList = CharactersListView(store: store, coordinator: self)
+
+        return UIHostingController(rootView: charactersList)
     }
     
     func makeCharacterDetailView(character: Character) -> UIViewController {

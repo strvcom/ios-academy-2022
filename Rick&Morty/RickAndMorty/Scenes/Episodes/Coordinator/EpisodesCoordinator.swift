@@ -29,11 +29,15 @@ extension EpisodesCoordinator: NavigationControllerCoordinator {
     }
     
     func createEpisodesListView() -> UIViewController {
-        UIHostingController(rootView: EpisodesListView(coordinator: self))
+        let store = container.resolve(type: EpisodesListStore.self)
+        let episodesList = EpisodesListView(store: store, coordinator: self)
+
+        return UIHostingController(rootView: episodesList)
     }
 
     func createEpisodeDetail(for episode: Episode) -> UIViewController {
-        let episodeDetail = EpisodeDetailView(episode: episode, coordinator: self)
+        let store = container.resolve(type: EpisodeDetailStore.self, argument: episode)
+        let episodeDetail = EpisodeDetailView(store: store, coordinator: self)
 
         return UIHostingController(rootView: episodeDetail)
     }
