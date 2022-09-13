@@ -9,5 +9,7 @@
 import DependencyInjection
 
 enum ManagerRegistration {
-    static func registerDependencies(to container: Container) {}
+    static func registerDependencies(to container: Container) {
+        fatalError("Implement")
+    }
 }

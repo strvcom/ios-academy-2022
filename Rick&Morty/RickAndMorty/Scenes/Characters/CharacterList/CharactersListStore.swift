@@ -15,12 +15,26 @@ import Foundation
 // MARK: - Actions
 extension CharactersListStore {
     func load() async {
+        
+        await fetch()
+    }
+}
+
+// MARK: - Fetching
+private extension CharactersListStore {
+    func fetch(page: Int? = nil) async {
+        let endpoint = CharactersRouter.getCharacters(page: page)
+
         do {
-            // wait 2 seconds
-            try await Task.sleep(nanoseconds: 2_000_000_000)
-            characters = Character.characters
+            let response: PaginatedResponse<Character> = try await apiManager.request(endpoint)
+
+            characters += response.results
+
+            
         } catch {
-            print("😡😡😡 error: \(error)")
+            Logger.log("\(error)", .error)
+
+
         }
     }
 }

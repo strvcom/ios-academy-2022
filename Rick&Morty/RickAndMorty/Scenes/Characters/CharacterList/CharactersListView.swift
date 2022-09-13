@@ -26,7 +26,14 @@ struct CharactersListView: View {
         ZStack {
             BackgroundGradientView()
             
-            contentView
+//            switch store.state {
+//            case .finished:
+//                contentView
+//            case .initial, .loading:
+//                ProgressView()
+//            case .failed:
+//                Text(R.string.localizable.generalStateErrorSomethingWentWrong())
+//            }
         }
         .navigationTitle(R.string.localizable.tabTitleCharacters())
         .toolbar {

@@ -24,6 +24,13 @@
 		27FAC44B2479D452002F2A33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27FAC40E2479D452002F2A33 /* Localizable.strings */; };
 		27FAC45E2479D452002F2A33 /* StoreRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAC4272479D452002F2A33 /* StoreRegistration.swift */; };
 		27FAC45F2479D452002F2A33 /* ManagerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAC4282479D452002F2A33 /* ManagerRegistration.swift */; };
+		288B3B8D28D0BEF600CDFDC4 /* CharactersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288B3B8C28D0BEF600CDFDC4 /* CharactersRouter.swift */; };
+		288B3B8F28D0C9AF00CDFDC4 /* APIManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288B3B8E28D0C9AF00CDFDC4 /* APIManaging.swift */; };
+		288B3B9128D0C9BE00CDFDC4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288B3B9028D0C9BE00CDFDC4 /* APIManager.swift */; };
+		288B3B9328D0C9CC00CDFDC4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288B3B9228D0C9CC00CDFDC4 /* Endpoint.swift */; };
+		288B3B9528D0CA5400CDFDC4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288B3B9428D0CA5400CDFDC4 /* APIError.swift */; };
+		288B3B9728D0CA7100CDFDC4 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288B3B9628D0CA7100CDFDC4 /* HTTPHeader.swift */; };
+		288B3B9928D0CA9400CDFDC4 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288B3B9828D0CA9400CDFDC4 /* HTTPMethod.swift */; };
 		2F240E6E21B185FA00E93D36 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F240E6D21B185FA00E93D36 /* R.generated.swift */; };
 		2FB2B0CA28AC00D400941259 /* CharactersListEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2B0C928AC00D400941259 /* CharactersListEventHandling.swift */; };
 		2FB2B0CD28AC05E200941259 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2B0CC28AC05E200941259 /* CharacterDetailView.swift */; };
@@ -119,6 +126,13 @@
 		27FAC40E2479D452002F2A33 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		27FAC4272479D452002F2A33 /* StoreRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreRegistration.swift; sourceTree = "<group>"; };
 		27FAC4282479D452002F2A33 /* ManagerRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerRegistration.swift; sourceTree = "<group>"; };
+		288B3B8C28D0BEF600CDFDC4 /* CharactersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRouter.swift; sourceTree = "<group>"; };
+		288B3B8E28D0C9AF00CDFDC4 /* APIManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManaging.swift; sourceTree = "<group>"; };
+		288B3B9028D0C9BE00CDFDC4 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		288B3B9228D0C9CC00CDFDC4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		288B3B9428D0CA5400CDFDC4 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		288B3B9628D0CA7100CDFDC4 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		288B3B9828D0CA9400CDFDC4 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		2F240E6D21B185FA00E93D36 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2F2D361821B02C65001C1CC7 /* RickAndMorty (DEV).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RickAndMorty (DEV).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB2B0C928AC00D400941259 /* CharactersListEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListEventHandling.swift; sourceTree = "<group>"; };
@@ -390,6 +404,7 @@
 		27FAC40F2479D452002F2A33 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				288B3B8928D0BEBD00CDFDC4 /* API */,
 				ADFF70A1282D58C50050FF20 /* Logger */,
 			);
 			path = Managers;
@@ -438,6 +453,36 @@
 				AD5D11B7283541C1004F7774 /* NibNameIdentifiable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		288B3B8928D0BEBD00CDFDC4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				288B3B8E28D0C9AF00CDFDC4 /* APIManaging.swift */,
+				288B3B9028D0C9BE00CDFDC4 /* APIManager.swift */,
+				288B3B9228D0C9CC00CDFDC4 /* Endpoint.swift */,
+				288B3B8B28D0BEDA00CDFDC4 /* Util */,
+				288B3B8A28D0BED400CDFDC4 /* Routers */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		288B3B8A28D0BED400CDFDC4 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				288B3B8C28D0BEF600CDFDC4 /* CharactersRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		288B3B8B28D0BEDA00CDFDC4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				288B3B9428D0CA5400CDFDC4 /* APIError.swift */,
+				288B3B9628D0CA7100CDFDC4 /* HTTPHeader.swift */,
+				288B3B9828D0CA9400CDFDC4 /* HTTPMethod.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		2F2D360F21B02C65001C1CC7 = {
@@ -919,17 +964,21 @@
 				ADFF70C1282D5FD10050FF20 /* Episode.swift in Sources */,
 				27FAC4432479D452002F2A33 /* InitialSceneCoordinating.swift in Sources */,
 				ADFF7115282D64E60050FF20 /* Alignment+Custom.swift in Sources */,
+				288B3B8F28D0C9AF00CDFDC4 /* APIManaging.swift in Sources */,
 				AD3D6682283BB32F000C8BAA /* UIBackgroundGradientView.swift in Sources */,
 				AD5D11DC2836AC31004F7774 /* RMTabBarController.swift in Sources */,
 				AD1B77E128B539E4001BED1E /* WebRenderingView.swift in Sources */,
 				27FAC4452479D452002F2A33 /* TabBarControllerCoordinator.swift in Sources */,
 				27FAC43E2479D452002F2A33 /* AppCoordinator.swift in Sources */,
+				288B3B9128D0C9BE00CDFDC4 /* APIManager.swift in Sources */,
 				FF6A302F289289D400E569D0 /* LocationsListItemCell.swift in Sources */,
 				ADFF70D4282D622B0050FF20 /* Font+App.swift in Sources */,
 				EC40232B28CDAB3000ABFEF9 /* EpisodesListStore.swift in Sources */,
+				288B3B8D28D0BEF600CDFDC4 /* CharactersRouter.swift in Sources */,
 				EC2F3E5928C6086100EC2B02 /* LocationsListStore.swift in Sources */,
 				27FAC43D2479D452002F2A33 /* Configuration.swift in Sources */,
 				ADCE51AB28C1F09E002D9592 /* EpisodeDetailViewEventHandling.swift in Sources */,
+				288B3B9928D0CA9400CDFDC4 /* HTTPMethod.swift in Sources */,
 				27FAC4412479D452002F2A33 /* NavigationControllerCoordinator.swift in Sources */,
 				27FAC4342479D452002F2A33 /* ActiveScene.swift in Sources */,
 				59DE635828A2C7C0002F8510 /* CharactersListView.swift in Sources */,
@@ -944,11 +993,13 @@
 				AD5D11D528368DAB004F7774 /* Image+App.swift in Sources */,
 				59DE635628A2C0B0002F8510 /* CharacterRowItemView.swift in Sources */,
 				2FB2B0CD28AC05E200941259 /* CharacterDetailView.swift in Sources */,
+				288B3B9328D0C9CC00CDFDC4 /* Endpoint.swift in Sources */,
 				27FAC43F2479D452002F2A33 /* AppCoordinating.swift in Sources */,
 				8FD9268E28998C0500C59893 /* EpisodesCoordinator.swift in Sources */,
 				AD3619F828B4FDD900A9A0DB /* CharacterDetailEpisodeView.swift in Sources */,
 				AD5D11B228354122004F7774 /* UILabel+DynamicFont.swift in Sources */,
 				27FAC45F2479D452002F2A33 /* ManagerRegistration.swift in Sources */,
+				288B3B9728D0CA7100CDFDC4 /* HTTPHeader.swift in Sources */,
 				2FB2B0CA28AC00D400941259 /* CharactersListEventHandling.swift in Sources */,
 				FFD1EEB128995BAE0096A79C /* LocationDetailHeaderView.swift in Sources */,
 				ADFF7117282D64E60050FF20 /* OnFirstAppearViewModifier.swift in Sources */,
@@ -978,6 +1029,7 @@
 				EC40232D28CDAD2900ABFEF9 /* EpisodeDetailStore.swift in Sources */,
 				C10117B624DD751800EBAE2B /* ViewControllerCoordinator.swift in Sources */,
 				27FAC4462479D452002F2A33 /* Coordinator.swift in Sources */,
+				288B3B9528D0CA5400CDFDC4 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
