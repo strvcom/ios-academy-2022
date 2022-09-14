@@ -10,6 +10,12 @@ import DependencyInjection
 
 enum ManagerRegistration {
     static func registerDependencies(to container: Container) {
-        fatalError("Implement")
+        
+        container.register(
+            type: APIManaging.self,
+            in: .shared,
+            factory: { _ in
+            APIManager()
+        })
     }
 }

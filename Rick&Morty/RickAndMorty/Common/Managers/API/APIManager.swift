@@ -34,10 +34,37 @@ final class APIManager: APIManaging {
     }()
 
     private func request(_ endpoint: Endpoint) async throws -> Data {
-        fatalError("Implement")
+        let request: URLRequest = try endpoint.asRequest()
+
+        Logger.log("🚀 Request for \"\(request.description)\"")
+
+        let (data, response) = try await urlSession.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.noResponse
+        }
+
+        guard 200..<300 ~= httpResponse.statusCode else {
+            throw APIError.unacceptableResponseStatusCode
+        }
+
+        // Uncomment this for pretty response logging!
+        if let body = String(data: data, encoding: .utf8) {
+            Logger.log("""
+            ☀️ Response for \"\(request.description)\":
+            👀 Status: \(httpResponse.statusCode)
+            🧍‍♂️ Body:
+            \(body)
+            """)
+        }
+
+        return data
     }
 
     func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
-        fatalError("Implement")
+        let data = try await request(endpoint)
+        let object = try decoder.decode(T.self, from: data)
+
+        return object
     }
 }

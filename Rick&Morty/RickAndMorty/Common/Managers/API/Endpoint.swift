@@ -30,6 +30,9 @@ extension Endpoint {
     func asRequest() throws -> URLRequest {
         let urlPath = Configuration.default.apiBaseUrl.appendingPathComponent(path)
 
+        
+        
+        
         guard var urlComponents = URLComponents(url: urlPath, resolvingAgainstBaseURL: true) else {
             throw APIError.invalidUrlComponents
         }

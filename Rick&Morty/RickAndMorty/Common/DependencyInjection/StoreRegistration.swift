@@ -30,8 +30,8 @@ import DependencyInjection
             )
         }
 
-        container.register(type: CharactersListStore.self, in: .new) { _ in
-            CharactersListStore()
+        container.register(type: CharactersListStore.self, in: .new) { resolver in
+            CharactersListStore(apiManager: resolver.resolve(type: APIManaging.self))
         }
         
         container.register(type: LocationDetailStore.self) { _, location in

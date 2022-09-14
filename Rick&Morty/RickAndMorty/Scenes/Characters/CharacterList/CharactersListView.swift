@@ -26,14 +26,14 @@ struct CharactersListView: View {
         ZStack {
             BackgroundGradientView()
             
-//            switch store.state {
-//            case .finished:
-//                contentView
-//            case .initial, .loading:
-//                ProgressView()
-//            case .failed:
-//                Text(R.string.localizable.generalStateErrorSomethingWentWrong())
-//            }
+            switch store.state {
+            case .finished:
+                contentView
+            case .initial, .loading:
+                ProgressView()
+            case .failed:
+                Text(R.string.localizable.generalStateErrorSomethingWentWrong())
+            }
         }
         .navigationTitle(R.string.localizable.tabTitleCharacters())
         .toolbar {
@@ -57,6 +57,10 @@ struct CharactersListView: View {
                 gridView
             }
         }
+        
+        if case let .finished(loadingMore) = store.state, loadingMore {
+            ProgressView()
+        }
     }
     
     @ViewBuilder private var listView: some View {
@@ -65,6 +69,9 @@ struct CharactersListView: View {
                 CharacterRowItemView(character: character)
                     .onTapGesture {
                         coordinator?.handle(event: .didSelectCharacter(character: character))
+                    }
+                    .task {
+                        await store.loadMoreIfNeeded(for: character)
                     }
             }
         }
@@ -78,6 +85,9 @@ struct CharactersListView: View {
                 CharacterGridItemView(character: character)
                     .onTapGesture {
                         coordinator?.handle(event: .didSelectCharacter(character: character))
+                    }
+                    .task {
+                        await store.loadMoreIfNeeded(for: character)
                     }
             }
         }
@@ -130,6 +140,6 @@ extension CharactersListView {
 // MARK: - Previews
 struct CharactersListView_Previews: PreviewProvider {
     static var previews: some View {
-        CharactersListView(store: .init())
+        CharactersListView(store: .init(apiManager: APIManager()))
     }
 }
